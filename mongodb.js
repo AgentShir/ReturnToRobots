@@ -12,8 +12,9 @@ MongoClient.connect(url, function(error, db) {
     console.log("Connection Capital, Captain!");
   }
 
-  let query = {}
-  db.collection("users").find(query, function(error, userDocuments) {
+  let query = {};
+
+  db.collection("users").find(query).toArray(function(error, userDocuments) {
     if (error) {
       console.log("Error fetching the fetching users");
     }
